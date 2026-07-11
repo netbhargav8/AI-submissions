@@ -1,0 +1,9 @@
+Step 1: Tool & Library Setup We load Pandas to handle tabular data operations, NumPy for raw array mathematical representation, Matplotlib for rendering custom visual trend lines, and Scikit-Learn (SimpleImputer) for automated data cleaning.
+
+Step 2: Ingesting & Initial ScrubbingThe raw Kaggle CSV data is pulled into memory. Because column headers often have invisible carriage returns or spaces from human typing, we run .str.strip() across the column names. We then immediately eliminate entries missing a Customer ID because you cannot attribute customer revenue metrics to an anonymous row.
+
+Step 3: Model-Driven Data ImputationInstead of roughly slicing data or manually hardcoding placeholder values, we pass the features into a machine learning pre-processor pipeline template. We apply a Median Strategy for columns tracking numeric data (Price per Unit, Quantity) to ensure extreme purchase outliers don't skew the results, and a Most Frequent Strategy for text arrays (Product Category) to fill missing blocks with the top-performing category label.
+
+Step 4: Analytical Layering (Aggregations)We compute a net Revenue column tracking individual line item metrics (Quantity * Price per Unit). We then use Pandas' groupby() method to group transactions by category or customer ID and sum their metrics. To capture the top performers, we pass the customer calculations into .nlargest(10).
+
+Step 5: Time-Series Extraction & PlottingWe format standard textual timestamps into functional datetime objects via pd.to_datetime(). We then isolate the year-month index, compute group sums for monthly cash flow, and construct a high-resolution green trend chart using Matplotlib to complete the requirements.
