@@ -1,0 +1,7 @@
+When processing unstructured machine data (like system or application log files), the data science workflow relies heavily on String Parsing and Frequency Aggregation:
+
+Log Parsing (Unstructured to Structured): Application logs are usually written out as raw lines of text (e.g., 2026-07-11 14:32:01 [ERROR] [AuthModule] Database connection timeout). To analyze this, we have to parse out the critical components: the timestamp, log level (ERROR/WARNING), and the specific Module responsible.
+
+Text Matching: We search each line of the text file for target keywords. While Advanced systems use Regular Expressions (re), standard Python string operations (like checking if "[ERROR]" in line) are incredibly fast and memory-efficient for baseline log scanning.
+
+Frequency Tracking & Vectorization: To understand which module is breaking the most, we count occurrences. In this setup, we store our parsed results inside a Python list of dictionaries, convert it instantly into a structured Pandas DataFrame, and use .value_counts() or .groupby() to calculate the exact error distribution frequencies.

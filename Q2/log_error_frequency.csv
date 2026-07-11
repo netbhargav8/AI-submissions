@@ -1,0 +1,5 @@
+Module,Log Level,Frequency
+DatabaseModule,ERROR,2
+PaymentModule,ERROR,2
+AuthModule,WARNING,1
+NetworkModule,WARNING,1
