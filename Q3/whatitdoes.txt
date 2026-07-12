@@ -1,0 +1,6 @@
+The Iris Dataset: This is a famous, built-in benchmark dataset in Machine Learning. It contains 150 samples of Iris flowers belonging to 3 unique species (Setosa, Versicolor, and Virginica). For each flower, 4 physical features are measured: sepal length, sepal width, petal length, and petal width.
+
+The Train/Test Split ($X$ and $y$): To ensure a model has actually learned patterns rather than just memorizing data, we split our data into training features ($X$) and target classifications ($y$). We train the model on a majority segment (e.g., 80%) and test its predictions on a completely unseen segment (e.g., 20%) to calculate its true real-world utility.  
+Decision Tree Classifier: This is a supervised learning algorithm that works like a flow-chart or a game of "20 Questions." It automatically finds thresholds in your features (e.g., "Is the petal length > 2.45 cm?") to branch off and isolate individual species classifications.
+
+Confusion Matrix: An evaluation grid that maps a model's Predicted Classifications against the Actual Classes. It explicitly reveals exactly where a model is getting confused (e.g., mistaking a Versicolor for a Virginica flower).
