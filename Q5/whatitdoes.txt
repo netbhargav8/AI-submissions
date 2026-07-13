@@ -1,0 +1,9 @@
+Exploratory Data Analysis (EDA): Before writing machine learning code, we analyze structural patterns. For the Titanic dataset, this means figuring out how demographic traits (like gender, age, and passenger class) influenced survival rates.
+
+Feature Engineering: Raw data isn't always model-ready. We transform messy variables into meaningful ones. For example, instead of tracking raw numbers for SibSp (siblings/spouses) and Parch (parents/children) separately, we combine them to engineer a single column: FamilySize.
+
+Model Duel (Linear vs. Ensemble):
+
+Logistic Regression: A linear model that assigns a strict weight coefficient to each feature. It works best when relationships are straightforward and additive.
+
+Random Forest: An ensemble model made of hundreds of unique Decision Trees that vote on the final outcome. It handles complex, non-linear human interactions effortlessly (e.g., "If Passenger Class is 3 AND gender is male AND age is under 10...").
