@@ -1,0 +1,7 @@
+Step 1: Folder Scanning (os library): The code opens the main box and looks at the smaller folders inside. If it sees a folder named cats and a folder named dogs, it instantly knows, "Okay, these folder names are my two categories!
+
+Step 2: Reading the Pictures (cv2 library): It pulls out the first picture. Instead of seeing a cute cat, the computer sees a giant grid of numbers representing the color of every single pixel.
+
+Step 3: Resizing & Cleaning (Standardization): Some pictures are huge portraits; some are small squares. A machine learning model hates this. The code acts like a cookie-cutter, violently stamping every single image into the exact same $64 \times 64$ square. It then turns the pixel color values (which range from 0 to 255) into simple decimals between 0.0 and 1.0.
+
+Step 4: Dealing the Cards (Index Splitting): The code needs to set aside 80% of the images to teach the model (Train) and 20% to test the model (Validation). To ensure it doesn't lose track of which image went where, it shuffles their row numbers (indexes) instead of the pictures themselves.Step 5: Writing the Receipt (pandas library): Before finishing, it writes down a receipt for every single image it processed. It notes the file name, how big it originally was, whether it was a cat or dog, and which pile (Train or Validation) it was thrown into. It saves this receipt as a .csv Excel file.
